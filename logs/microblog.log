@@ -1,0 +1,94 @@
+2022-09-06 14:01:43,802 ERROR: Exception on /admin [GET] [in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/routes.py", line 300, in admin
+    return render_template('admin.html', title='Admin', form=form,
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 926, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/admin.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/base.html", line 56, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/admin.html", line 15, in block 'app_content'
+    <!-- <a href="{{ url_for('delete', weeks_id=line.id) }}">ENTFERNEN</a> -->
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/werkzeug/routing.py", line 2315, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'delete' with values ['weeks_id']. Did you mean 'reserve' instead?
+2022-09-06 14:10:48,993 INFO: Microblog startup [in /Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/__init__.py:47]
+2022-09-06 14:11:08,691 INFO: Microblog startup [in /Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/__init__.py:47]
+2022-09-06 14:12:12,444 INFO: Microblog startup [in /Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/__init__.py:47]
+2022-09-06 14:13:25,557 ERROR: Exception on /admin [GET] [in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/routes.py", line 300, in admin
+    return render_template('admin.html', title='Admin', form=form,
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 926, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/admin.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/base.html", line 56, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/templates/admin.html", line 15, in block 'app_content'
+    <!-- <a href="{{ url_for('delete', weeks_id=line.id) }}">ENTFERNEN</a> -->
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/werkzeug/routing.py", line 2315, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'delete' with values ['weeks_id']. Did you mean 'reserve' instead?
+2022-09-06 14:16:04,885 INFO: Microblog startup [in /Users/mauro.sagace/SynologyDrive/Datenbanken- und Web Entwicklung_MySQL/microblog_Grundgeruest/WebAPP-2022/rentalcars-docker/app/__init__.py:47]

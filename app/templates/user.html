@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    
+        <tr>
+            <td> 
+                <h1>User: {{ current_user.username }}</h1>
+                                <p><a href="{{ url_for('edit_profile') }}">Userprofil ändern</a></p>
+            </td>
+        </tr>
+
+{% for line in lines %} 
+
+        <table class="table table-hover">
+            <tr>
+                <td width="70px">
+                Von {{ line.date_begin.strftime('%d.%m.%Y') }}
+                bis {{ line.date_end.strftime('%d.%m.%Y') }}
+                <a href="{{ url_for('change', weeks_id=line.id) }}">stornieren</a>
+                </td>
+            </tr>
+        </table>    
+{% endfor %}    
+{% endblock %}
