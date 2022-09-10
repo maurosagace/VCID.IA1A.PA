@@ -1,0 +1,83 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red50\green244\blue241;\red254\green215\blue216;\red0\green0\blue0;
+\red235\green239\blue24;\red251\green30\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c19572\c95778\c95688;\cssrgb\c100000\c87708\c87701;\csgray\c0;
+\cssrgb\c93803\c93590\c10850;\cssrgb\c100000\c29675\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25360\viewh19920\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs46 \cf2 \CocoaLigature0 services
+\f1\b0 \cf3 :\cf4 \
+  
+\f0\b \cf2 db
+\f1\b0 \cf3 :\cf4 \
+    
+\f0\b \cf2 image
+\f1\b0 \cf3 :\cf4  mysql\
+    
+\f0\b \cf2 container_name
+\f1\b0 \cf3 :\cf4  mysqldb\
+    
+\f0\b \cf2 restart
+\f1\b0 \cf3 :\cf4  always\
+    
+\f0\b \cf2 environment
+\f1\b0 \cf3 :\cf4 \
+      \cf5 - \cf4 MYSQL_ROOT_PASSWORD=fSM3A-8HC2Tb\
+    
+\f0\b \cf2 expose
+\f1\b0 \cf3 :\cf4 \
+      \cf5 - \cf6 3306\cf4 \
+    
+\f0\b \cf2 volumes
+\f1\b0 \cf3 :\cf4 \
+      \cf5 - \cf4 /home/ubuntu/prod/db:/var/lib/mysql\
+  
+\f0\b \cf2 nginx
+\f1\b0 \cf3 :\cf4 \
+    
+\f0\b \cf2 image
+\f1\b0 \cf3 :\cf4  nginx:stable-alpine\
+    
+\f0\b \cf2 container_name
+\f1\b0 \cf3 :\cf4  nginx\
+    
+\f0\b \cf2 restart
+\f1\b0 \cf3 :\cf4  always\
+    
+\f0\b \cf2 ports
+\f1\b0 \cf3 :\cf4 \
+      \cf5 - \cf4 80:80\
+     \cf2  #- 4711:80\cf4 \
+    
+\f0\b \cf2 volumes
+\f1\b0 \cf3 :\cf4 \
+    \cf5 - \cf4 /home/ubuntu/prod/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro\
+\
+  
+\f0\b \cf2 flask
+\f1\b0 \cf3 :\cf4 \
+    
+\f0\b \cf2 image
+\f1\b0 \cf3 :\cf4  msagace/rentalcars:latest\
+     \cf2  #image: snickch/flask001:v2\cf4 \
+     \cf2  #image: microblog_v11\cf4 \
+    
+\f0\b \cf2 container_name
+\f1\b0 \cf3 :\cf4  flask\
+    
+\f0\b \cf2 restart
+\f1\b0 \cf3 :\cf4  always\
+    
+\f0\b \cf2 expose
+\f1\b0 \cf3 :\cf4 \
+      \cf5 - \cf6 5000\cf4 \
+   \cf2  #volumes:\cf4 \
+   \cf2  #  - /home/ubuntu/prod/app/:/app:rw\cf4 \
+   \cf2  #command: gunicorn -w 4 --bind 0.0.0.0:5000 wsgi:app\cf4 \
+    
+\f0\b \cf2 depends_on
+\f1\b0 \cf3 :\cf4 \
+      \cf5 - \cf6 "db"\cf4 \
+}
